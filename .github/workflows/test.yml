@@ -49,3 +49,26 @@ jobs:
       - name: After version
         run: cat package-lock.json | grep "lodash" -B5 -A5
         working-directory: npm8
+  npm8_2:
+    name: "npm 8_2"
+    runs-on: ubuntu-18.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm install --global npm@8
+      - name: Before version
+        run: cat package-lock.json | grep "lodash" -B5 -A5
+        working-directory: npm8_lockfileversion2
+      - name: npm install
+        run: npm install
+        working-directory: npm8_lockfileversion2
+      - name: cat package-lock.json
+        run: cat package-lock.json
+        working-directory: npm8_lockfileversion2
+      - name: After version
+        run: cat package-lock.json | grep "lodash" -B5 -A5
+        working-directory: npm8_lockfileversion2
