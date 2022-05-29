@@ -20,6 +20,9 @@ jobs:
       - name: npm install
         run: npm install
         working-directory: npm6
+      - name: cat package-lock.json
+        run: cat package-lock.json
+        working-directory: npm6
       - name: After version
         run: cat package-lock.json | grep "lodash" -B5 -A5
         working-directory: npm6
@@ -39,6 +42,9 @@ jobs:
         working-directory: npm8
       - name: npm install
         run: npm install
+        working-directory: npm8
+      - name: cat package-lock.json
+        run: cat package-lock.json
         working-directory: npm8
       - name: After version
         run: cat package-lock.json | grep "lodash" -B5 -A5
