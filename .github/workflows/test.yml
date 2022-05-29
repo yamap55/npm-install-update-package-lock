@@ -26,6 +26,9 @@ jobs:
       - name: After version
         run: cat package-lock.json | grep "lodash" -B5 -A5
         working-directory: npm6
+      - name: npm list
+        run: npm list | grep "lodash"
+        working-directory: npm6
   npm7:
     name: "npm 7"
     runs-on: ubuntu-18.04
@@ -48,6 +51,9 @@ jobs:
         working-directory: npm7
       - name: After version
         run: cat package-lock.json | grep "lodash" -B5 -A5
+        working-directory: npm7
+      - name: npm list
+        run: npm list | grep "lodash"
         working-directory: npm7
   npm8:
     name: "npm 8"
@@ -72,6 +78,9 @@ jobs:
       - name: After version
         run: cat package-lock.json | grep "lodash" -B5 -A5
         working-directory: npm8
+      - name: npm list
+        run: npm list | grep "lodash"
+        working-directory: npm8
   npm8_2:
     name: "npm 8_2"
     runs-on: ubuntu-18.04
@@ -94,4 +103,7 @@ jobs:
         working-directory: npm8_lockfileversion2
       - name: After version
         run: cat package-lock.json | grep "lodash" -B5 -A5
+        working-directory: npm8_lockfileversion2
+      - name: npm list
+        run: npm list | grep "lodash"
         working-directory: npm8_lockfileversion2
